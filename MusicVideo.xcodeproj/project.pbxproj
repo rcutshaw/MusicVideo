@@ -35,12 +35,12 @@
 
 /* Begin PBXFileReference section */
 		179F53B01D4C0FF80034670E /* MusicVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		179F53B31D4C0FF80034670E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		179F53B31D4C0FF80034670E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MusicVideo/AppDelegate.swift; sourceTree = "<group>"; };
 		179F53B51D4C0FF80034670E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		179F53B81D4C0FF90034670E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		179F53BA1D4C0FF90034670E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		179F53BA1D4C0FF90034670E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MusicVideo/Assets.xcassets; sourceTree = "<group>"; };
 		179F53BD1D4C0FF90034670E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		179F53BF1D4C0FF90034670E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		179F53BF1D4C0FF90034670E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = MusicVideo/Info.plist; sourceTree = "<group>"; };
 		179F53C41D4C0FF90034670E /* MusicVideoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicVideoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		179F53C81D4C0FF90034670E /* MusicVideoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoTests.swift; sourceTree = "<group>"; };
 		179F53CA1D4C0FF90034670E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				179F53B21D4C0FF80034670E /* MusicVideo */,
+				179F53E41D4C106A0034670E /* Supporting Flies */,
 				179F53C71D4C0FF90034670E /* MusicVideoTests */,
 				179F53D21D4C0FF90034670E /* MusicVideoUITests */,
 				179F53B11D4C0FF80034670E /* Products */,
@@ -97,12 +98,9 @@
 		179F53B21D4C0FF80034670E /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
-				179F53B31D4C0FF80034670E /* AppDelegate.swift */,
-				179F53B51D4C0FF80034670E /* ViewController.swift */,
-				179F53B71D4C0FF90034670E /* Main.storyboard */,
-				179F53BA1D4C0FF90034670E /* Assets.xcassets */,
-				179F53BC1D4C0FF90034670E /* LaunchScreen.storyboard */,
-				179F53BF1D4C0FF90034670E /* Info.plist */,
+				179F53E31D4C104F0034670E /* Model */,
+				179F53E21D4C10460034670E /* View */,
+				179F53E11D4C10350034670E /* Controller */,
 			);
 			path = MusicVideo;
 			sourceTree = "<group>";
@@ -123,6 +121,41 @@
 				179F53D51D4C0FF90034670E /* Info.plist */,
 			);
 			path = MusicVideoUITests;
+			sourceTree = "<group>";
+		};
+		179F53E11D4C10350034670E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				179F53B51D4C0FF80034670E /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		179F53E21D4C10460034670E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				179F53B71D4C0FF90034670E /* Main.storyboard */,
+				179F53BC1D4C0FF90034670E /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		179F53E31D4C104F0034670E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		179F53E41D4C106A0034670E /* Supporting Flies */ = {
+			isa = PBXGroup;
+			children = (
+				179F53B31D4C0FF80034670E /* AppDelegate.swift */,
+				179F53BA1D4C0FF90034670E /* Assets.xcassets */,
+				179F53BF1D4C0FF90034670E /* Info.plist */,
+			);
+			name = "Supporting Flies";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +226,7 @@
 				TargetAttributes = {
 					179F53AF1D4C0FF80034670E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YFK43C2PXL;
 					};
 					179F53C31D4C0FF90034670E = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -401,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MusicVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsmartz.MusicVideo;
@@ -412,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MusicVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsmartz.MusicVideo;
