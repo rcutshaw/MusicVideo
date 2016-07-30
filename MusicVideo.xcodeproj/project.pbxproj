@@ -15,6 +15,8 @@
 		179F53C91D4C0FF90034670E /* MusicVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53C81D4C0FF90034670E /* MusicVideoTests.swift */; };
 		179F53D41D4C0FF90034670E /* MusicVideoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53D31D4C0FF90034670E /* MusicVideoUITests.swift */; };
 		179F53E61D4C22A30034670E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53E51D4C22A30034670E /* APIManager.swift */; };
+		179F53E91D4CE4B00034670E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53E81D4CE4B00034670E /* Constants.swift */; };
+		179F53EB1D4CE62D0034670E /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53EA1D4CE62D0034670E /* MusicVideo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		179F53D31D4C0FF90034670E /* MusicVideoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoUITests.swift; sourceTree = "<group>"; };
 		179F53D51D4C0FF90034670E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179F53E51D4C22A30034670E /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		179F53E81D4CE4B00034670E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		179F53EA1D4CE62D0034670E /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		179F53B21D4C0FF80034670E /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
+				179F53E71D4CE4870034670E /* Utils */,
 				179F53E31D4C104F0034670E /* Model */,
 				179F53E21D4C10460034670E /* View */,
 				179F53E11D4C10350034670E /* Controller */,
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				179F53E51D4C22A30034670E /* APIManager.swift */,
+				179F53EA1D4CE62D0034670E /* MusicVideo.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -159,6 +165,14 @@
 				179F53BF1D4C0FF90034670E /* Info.plist */,
 			);
 			name = "Supporting Flies";
+			sourceTree = "<group>";
+		};
+		179F53E71D4CE4870034670E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				179F53E81D4CE4B00034670E /* Constants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +309,9 @@
 			files = (
 				179F53E61D4C22A30034670E /* APIManager.swift in Sources */,
 				179F53B61D4C0FF80034670E /* ViewController.swift in Sources */,
+				179F53EB1D4CE62D0034670E /* MusicVideo.swift in Sources */,
 				179F53B41D4C0FF80034670E /* AppDelegate.swift in Sources */,
+				179F53E91D4CE4B00034670E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
