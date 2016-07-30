@@ -17,6 +17,7 @@
 		179F53E61D4C22A30034670E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53E51D4C22A30034670E /* APIManager.swift */; };
 		179F53E91D4CE4B00034670E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53E81D4CE4B00034670E /* Constants.swift */; };
 		179F53EB1D4CE62D0034670E /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53EA1D4CE62D0034670E /* MusicVideo.swift */; };
+		179F53F01D4D297E0034670E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 179F53EF1D4D297E0034670E /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,9 @@
 		179F53E51D4C22A30034670E /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		179F53E81D4CE4B00034670E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		179F53EA1D4CE62D0034670E /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
+		179F53ED1D4D297C0034670E /* MusicVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicVideo-Bridging-Header.h"; sourceTree = "<group>"; };
+		179F53EE1D4D297E0034670E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		179F53EF1D4D297E0034670E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		179F53B21D4C0FF80034670E /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
+				179F53EC1D4D28E30034670E /* Obj-C */,
 				179F53E71D4CE4870034670E /* Utils */,
 				179F53E31D4C104F0034670E /* Model */,
 				179F53E21D4C10460034670E /* View */,
@@ -173,6 +178,16 @@
 				179F53E81D4CE4B00034670E /* Constants.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		179F53EC1D4D28E30034670E /* Obj-C */ = {
+			isa = PBXGroup;
+			children = (
+				179F53EE1D4D297E0034670E /* Reachability.h */,
+				179F53EF1D4D297E0034670E /* Reachability.m */,
+				179F53ED1D4D297C0034670E /* MusicVideo-Bridging-Header.h */,
+			);
+			name = "Obj-C";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +326,7 @@
 				179F53B61D4C0FF80034670E /* ViewController.swift in Sources */,
 				179F53EB1D4CE62D0034670E /* MusicVideo.swift in Sources */,
 				179F53B41D4C0FF80034670E /* AppDelegate.swift in Sources */,
+				179F53F01D4D297E0034670E /* Reachability.m in Sources */,
 				179F53E91D4CE4B00034670E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,11 +471,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MusicVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsmartz.MusicVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicVideo/MusicVideo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -467,11 +486,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MusicVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bitsmartz.MusicVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MusicVideo/MusicVideo-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -540,6 +561,7 @@
 				179F53DA1D4C0FF90034670E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		179F53DB1D4C0FF90034670E /* Build configuration list for PBXNativeTarget "MusicVideoTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +570,7 @@
 				179F53DD1D4C0FF90034670E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		179F53DE1D4C0FF90034670E /* Build configuration list for PBXNativeTarget "MusicVideoUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +579,7 @@
 				179F53E01D4C0FF90034670E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
