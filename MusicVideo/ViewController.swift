@@ -30,6 +30,8 @@ class ViewController: UIViewController {
 
     func didLoadData(videos: [Videos]) {  // step 8
         
+        print(reachabilityStatus)
+        
         self.videos = videos  // stored in class instance
         
         for item in videos {
