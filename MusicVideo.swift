@@ -8,7 +8,7 @@
 
 import Foundation
 
-class videos {
+class Videos {
     
     // Data Encapsulation
     
@@ -67,7 +67,7 @@ class videos {
         return _vReleaseDate
     }
     
-    init(data: JSONDictionary) {
+    init(data: JSONDictionary) {  // step 4
         
         // If we do not inialize all properties, we will get error message
         // Return from inializer without initializing all stored properties

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var videos = [Videos]()  // created this array to hold all our fetched videos
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,22 +23,36 @@ class ViewController: UIViewController {
 //            print(result)
 //        }
         
+        // step 1
         api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=10/json",
                     completion: didLoadData)  // when done, executes didLoadData
     }
 
-    func didLoadData(result:String) {  // result from APIManager method is now the input to didLoadData
+    func didLoadData(videos: [Videos]) {  // step 8
         
-//        print(result)
+        self.videos = videos  // stored in class instance
         
-        let alert = UIAlertController(title: (result), message: nil, preferredStyle: .Alert)
-        
-        let okAction = UIAlertAction(title: "Ok", style: .Default) { action -> Void in
-            // do something if you want
+        for item in videos {
+            print("name = \(item.vName)")
         }
         
-        alert.addAction(okAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        // Best
+        for (index, item) in videos.enumerate() {
+            print("\(index) name = \(item.vName)")
+        }
+
+        // Better
+//        for i in 0..<videos.count {
+//            let video = videos[i]
+//            print("\(i) name = \(video.vName)")
+//        }
+ 
+        // Not good - old style
+//        for var i = 0; i < videos.count; i++ {
+//            let video = videos[i]
+//            print("\(i) name = \(video.vName)")
+//        }
     }
+    
 }
 
