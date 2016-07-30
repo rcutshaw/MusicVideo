@@ -41,10 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let networkStatus: NetworkStatus = currentReachabilityStatus.currentReachabilityStatus()
         
         switch networkStatus.rawValue {
+            
         case NotReachable.rawValue : reachabilityStatus = NOACCESS
         case ReachableViaWiFi.rawValue : reachabilityStatus = WIFI
         case ReachableViaWWAN.rawValue : reachabilityStatus = WWAN
         default:return
+            
         }
         
         NSNotificationCenter.defaultCenter().postNotificationName("ReachStatusChanged", object: nil)
