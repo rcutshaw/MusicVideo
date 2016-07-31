@@ -8,14 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var videos = [Videos]()  // created this array to hold all our fetched videos
+    
+    @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var displayLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityStatusChanged), name: "ReachStatusChanged", object: nil)
         
@@ -30,7 +35,7 @@ class ViewController: UIViewController {
 //        }
         
         // step 1
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=10/json",
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json",
                     completion: didLoadData)  // when done, executes didLoadData
     }
 
@@ -49,6 +54,8 @@ class ViewController: UIViewController {
             print("\(index) name = \(item.vName)")
         }
 
+        tableView.reloadData()
+        
         // Better
 //        for i in 0..<videos.count {
 //            let video = videos[i]
@@ -84,6 +91,29 @@ class ViewController: UIViewController {
     {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "ReachStatusChanged", object: nil)
     }
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videos.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        let video = videos[indexPath.row]
+        
+        cell.textLabel?.text = ("\(indexPath.row + 1)" )
+        
+        cell.detailTextLabel?.text = video.vName
+        
+        return cell
+    }
+    
     
 }
 
