@@ -58,7 +58,7 @@ class Videos {
     }
     
     var vGenre: String {
-        return _vImid
+        return _vGenre
     }
     var vLinkToiTunes: String {
         return _vLinkToiTunes

@@ -20,6 +20,7 @@ class APIManager {
         let url = NSURL(string: urlString)!
 
         let task = session.dataTaskWithURL(url) {  // step 3
+            
             (data, response, error) -> Void in
             
             if error != nil {
@@ -38,13 +39,14 @@ class APIManager {
                     
                     // step 3
                     if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionary,
-                        feed = json["feed"] as? JSONDictionary,
-                        entries = feed["entry"] as? JSONArray {
-                        
+                                feed = json["feed"] as? JSONDictionary,
+                                entries = feed["entry"] as? JSONArray {
+                    
                         var videos = [Videos]()
                         for (index, entry) in entries.enumerate() {
                             let entry = Videos(data: entry as! JSONDictionary)
                             entry.vRank = index + 1
+                            print("entry price = \(entry.vPrice)")
                             videos.append(entry)
                         }
                         

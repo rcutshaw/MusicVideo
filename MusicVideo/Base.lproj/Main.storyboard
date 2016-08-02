@@ -62,7 +62,7 @@
                                     <outlet property="musicImage" destination="v5T-JY-CQB" id="Yh1-1k-vpQ"/>
                                     <outlet property="musicTitle" destination="G3l-Vs-44l" id="izn-Qp-aPl"/>
                                     <outlet property="rank" destination="7eZ-Lu-Ts2" id="EcZ-B9-veb"/>
-                                    <segue destination="WvX-vf-zdG" kind="show" id="kUe-d4-2vV"/>
+                                    <segue destination="WvX-vf-zdG" kind="show" identifier="musicDetail" id="kUe-d4-2vV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -89,9 +89,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecJ-cQ-WN7">
-                                <rect key="frame" x="1" y="132" width="599" height="282"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dU-6r-SwW">
                                 <rect key="frame" x="7" y="64" width="586" height="69"/>
                                 <constraints>
@@ -106,17 +103,17 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="209" id="YUp-xb-fbg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTI-dd-wnP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTI-dd-wnP">
                                 <rect key="frame" x="504" y="416" width="76" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="1nU-LC-5vm"/>
                                     <constraint firstAttribute="width" constant="76" id="MR2-Hz-gOn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -125,10 +122,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="UqM-c5-XYZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecJ-cQ-WN7">
+                                <rect key="frame" x="1" y="132" width="599" height="282"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -158,6 +158,13 @@
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </toolbarItems>
+                    <connections>
+                        <outlet property="vGenre" destination="I4E-sz-oEc" id="dtl-B3-oQm"/>
+                        <outlet property="vName" destination="0dU-6r-SwW" id="4Pg-B3-aPv"/>
+                        <outlet property="vPrice" destination="nTI-dd-wnP" id="ksg-qZ-VPp"/>
+                        <outlet property="vRights" destination="oAP-V9-kAN" id="Elk-Zy-dgh"/>
+                        <outlet property="vVideoImage" destination="ecJ-cQ-WN7" id="Bxa-DX-QH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRO-Sz-LWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

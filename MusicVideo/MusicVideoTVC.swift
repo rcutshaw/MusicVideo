@@ -33,28 +33,11 @@ class MusicVideoTVC: UITableViewController {
         
         self.videos = videos  // stored in class instance
         
-        for item in videos {
-            print("name = \(item.vName)")
-        }
-        
-        // Best
         for (index, item) in videos.enumerate() {
             print("\(index) name = \(item.vName)")
         }
         
         tableView.reloadData()
-        
-        // Better
-        //        for i in 0..<videos.count {
-        //            let video = videos[i]
-        //            print("\(i) name = \(video.vName)")
-        //        }
-        
-        // Not good - old style
-        //        for var i = 0; i < videos.count; i++ {
-        //            let video = videos[i]
-        //            print("\(i) name = \(video.vName)")
-        //        }
     }
     
     func reachabilityStatusChanged()
@@ -133,6 +116,7 @@ class MusicVideoTVC: UITableViewController {
 
     private struct storyboard {
         static let cellReuseIdentifier = "cell"
+        static let segueIdentifier = "musicDetail"
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -180,14 +164,19 @@ class MusicVideoTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == storyboard.segueIdentifier {
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let video = videos[indexPath.row]
+                let dvc = segue.destinationViewController as! MusicVideoDetailVC
+                dvc.videos = video
+            }
+        }
     }
-    */
 
 }

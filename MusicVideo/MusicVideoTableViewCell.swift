@@ -32,7 +32,6 @@ class MusicVideoTableViewCell: UITableViewCell {
        // musicImage.image = UIImage(named: "imageNotAvailable")
         
         if video!.vImageData != nil {
-            
             print("Get data from array ...")
             musicImage.image = UIImage(data: video!.vImageData!)
         } else {
