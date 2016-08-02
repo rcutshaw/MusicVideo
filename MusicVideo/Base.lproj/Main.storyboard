@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="1689" y="394"/>
         </scene>
-        <!--Table View Controller-->
+        <!--SettingsTVC-->
         <scene sceneID="C13-Yx-39w">
             <objects>
-                <tableViewController id="J8r-hg-G1d" sceneMemberID="viewController">
+                <tableViewController id="J8r-hg-G1d" customClass="SettingsTVC" customModule="MusicVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DzL-ph-Sqn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,6 +250,15 @@
                             <outlet property="delegate" destination="J8r-hg-G1d" id="eZW-A3-gvW"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="APICnt" destination="bG9-e6-TuJ" id="0kz-vv-2jy"/>
+                        <outlet property="aboutDisplay" destination="dK1-Lv-QcJ" id="aQB-Sf-QyS"/>
+                        <outlet property="bestImageDisplay" destination="y9y-YJ-VYZ" id="JAr-Kl-mHs"/>
+                        <outlet property="feedbackDisplay" destination="ov4-W7-Bly" id="2Sr-Sk-Nzw"/>
+                        <outlet property="securityDisplay" destination="RWz-QD-CRh" id="huN-aQ-3Ye"/>
+                        <outlet property="sliderCnt" destination="7CH-8S-iXz" id="gbR-gP-uxy"/>
+                        <outlet property="touchID" destination="ZXP-96-BBJ" id="xCP-Ht-9da"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GlF-OQ-YWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -277,7 +286,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre: POP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4E-sz-oEc">
-                                <rect key="frame" x="20" y="493" width="88" height="35"/>
+                                <rect key="frame" x="20" y="415" width="209" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="209" id="YUp-xb-fbg"/>
                                 </constraints>
@@ -286,7 +295,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTI-dd-wnP">
-                                <rect key="frame" x="504" y="494" width="76" height="34"/>
+                                <rect key="frame" x="504" y="416" width="76" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="1nU-LC-5vm"/>
                                     <constraint firstAttribute="width" constant="76" id="MR2-Hz-gOn"/>
@@ -296,7 +305,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rights" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAP-V9-kAN">
-                                <rect key="frame" x="1" y="536" width="599" height="20"/>
+                                <rect key="frame" x="1" y="458" width="599" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="UqM-c5-XYZ"/>
                                 </constraints>
@@ -304,7 +313,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecJ-cQ-WN7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecJ-cQ-WN7">
                                 <rect key="frame" x="1" y="132" width="599" height="360"/>
                             </imageView>
                         </subviews>
@@ -350,13 +359,6 @@
                                 <exclude reference="4tY-hp-mje"/>
                                 <exclude reference="8OG-tx-yR6"/>
                                 <exclude reference="B9J-ta-3FP"/>
-                                <exclude reference="DOl-w1-357"/>
-                                <exclude reference="LOg-fd-EX4"/>
-                                <exclude reference="gSl-J7-F7k"/>
-                                <exclude reference="wBs-Do-rqa"/>
-                                <exclude reference="oGc-O8-A9z"/>
-                                <exclude reference="rDX-eP-EQ4"/>
-                                <exclude reference="bDa-XT-U1u"/>
                                 <exclude reference="L9E-OV-ltX"/>
                                 <exclude reference="NQQ-Fi-HVW"/>
                                 <include reference="hjZ-rQ-xh1"/>
@@ -364,7 +366,14 @@
                                 <include reference="nW7-Tc-vW4"/>
                                 <include reference="ubq-wK-LBH"/>
                                 <exclude reference="v28-ot-Lci"/>
+                                <exclude reference="DOl-w1-357"/>
+                                <exclude reference="LOg-fd-EX4"/>
+                                <exclude reference="gSl-J7-F7k"/>
+                                <exclude reference="wBs-Do-rqa"/>
+                                <exclude reference="oGc-O8-A9z"/>
+                                <exclude reference="rDX-eP-EQ4"/>
                                 <include reference="iFQ-xg-PG0"/>
+                                <exclude reference="bDa-XT-U1u"/>
                             </mask>
                         </variation>
                     </view>
