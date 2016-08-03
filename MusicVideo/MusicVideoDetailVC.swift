@@ -10,7 +10,7 @@ import UIKit
 
 class MusicVideoDetailVC: UIViewController {
 
-    var videos: Videos!
+    var videos:Videos!
     
     @IBOutlet weak var vName: UILabel!
     @IBOutlet weak var vVideoImage: UIImageView!
