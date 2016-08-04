@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class MusicVideoDetailVC: UIViewController {
 
@@ -42,6 +44,17 @@ class MusicVideoDetailVC: UIViewController {
         vGenre.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         vPrice.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         vRights.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+    }
+    
+    @IBAction func playVideo(sender: UIBarButtonItem) {
+        
+        let url = NSURL(string: videos.vVideoUrl)!
+        let player = AVPlayer(URL: url)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.presentViewController(playerViewController, animated: true ) {
+            playerViewController.player?.play()
+        }
     }
     
     // Is called just as the object is about to be deallocated
