@@ -80,6 +80,12 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="acM-W3-dd2"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="bFL-cA-mCq">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="WzX-FE-qMq" eventType="valueChanged" id="iuv-va-ndT"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gql-iB-hl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
