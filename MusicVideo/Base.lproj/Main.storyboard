@@ -222,17 +222,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bG9-e6-TuJ">
-                                                    <rect key="frame" x="8" y="8" width="584" height="75"/>
+                                                    <rect key="frame" x="528" y="8" width="64" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="gsc-fL-a8P"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Music Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IY8-Ku-Vkc">
+                                                    <rect key="frame" x="8" y="31" width="300" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="ceh-GW-sml"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bG9-e6-TuJ" firstAttribute="leading" secondItem="rMW-er-nZB" secondAttribute="leadingMargin" id="7CD-Qz-8QB"/>
-                                                <constraint firstItem="bG9-e6-TuJ" firstAttribute="trailing" secondItem="rMW-er-nZB" secondAttribute="trailingMargin" id="VoJ-uD-Lvx"/>
-                                                <constraint firstItem="bG9-e6-TuJ" firstAttribute="top" secondItem="rMW-er-nZB" secondAttribute="topMargin" id="YuB-Nq-YlO"/>
-                                                <constraint firstAttribute="bottom" secondItem="bG9-e6-TuJ" secondAttribute="bottom" id="wg9-9N-VfH"/>
+                                                <constraint firstItem="IY8-Ku-Vkc" firstAttribute="centerY" secondItem="rMW-er-nZB" secondAttribute="centerY" id="400-U7-Sjm"/>
+                                                <constraint firstItem="bG9-e6-TuJ" firstAttribute="trailing" secondItem="rMW-er-nZB" secondAttribute="trailingMargin" id="XwJ-WQ-zaA"/>
+                                                <constraint firstItem="bG9-e6-TuJ" firstAttribute="top" secondItem="rMW-er-nZB" secondAttribute="topMargin" id="e6n-7t-Gr7"/>
+                                                <constraint firstItem="IY8-Ku-Vkc" firstAttribute="leading" secondItem="rMW-er-nZB" secondAttribute="leadingMargin" id="pBM-PD-Log"/>
+                                                <constraint firstAttribute="bottom" secondItem="bG9-e6-TuJ" secondAttribute="bottom" id="rl3-lx-H2m"/>
+                                                <constraint firstItem="IY8-Ku-Vkc" firstAttribute="top" secondItem="rMW-er-nZB" secondAttribute="topMargin" constant="23" id="zub-mY-Hyn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -249,10 +263,20 @@
                                                         <action selector="valueChanged:" destination="J8r-hg-G1d" eventType="valueChanged" id="ckr-zG-n50"/>
                                                     </connections>
                                                 </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the slider below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfS-hN-6E4">
+                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7CH-8S-iXz" firstAttribute="leading" secondItem="DzX-cs-Veq" secondAttribute="leadingMargin" constant="40" id="36W-VZ-niZ"/>
+                                                <constraint firstItem="HfS-hN-6E4" firstAttribute="leading" secondItem="DzX-cs-Veq" secondAttribute="leadingMargin" id="PQd-5B-9yL"/>
                                                 <constraint firstItem="7CH-8S-iXz" firstAttribute="centerX" secondItem="DzX-cs-Veq" secondAttribute="centerX" id="Rz2-vs-WMj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HfS-hN-6E4" secondAttribute="bottom" constant="46" id="U0z-J4-Mgk"/>
+                                                <constraint firstItem="HfS-hN-6E4" firstAttribute="centerX" secondItem="7CH-8S-iXz" secondAttribute="centerX" id="aEH-KG-BuB"/>
+                                                <constraint firstItem="HfS-hN-6E4" firstAttribute="top" secondItem="DzX-cs-Veq" secondAttribute="topMargin" id="ac3-3R-1Sf"/>
                                                 <constraint firstItem="7CH-8S-iXz" firstAttribute="centerY" secondItem="DzX-cs-Veq" secondAttribute="centerY" id="hXh-9c-8m1"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -270,7 +294,9 @@
                         <outlet property="APICnt" destination="bG9-e6-TuJ" id="0kz-vv-2jy"/>
                         <outlet property="aboutDisplay" destination="dK1-Lv-QcJ" id="aQB-Sf-QyS"/>
                         <outlet property="bestImageDisplay" destination="y9y-YJ-VYZ" id="JAr-Kl-mHs"/>
+                        <outlet property="dragSliderLabel" destination="HfS-hN-6E4" id="BSq-RG-gTV"/>
                         <outlet property="feedbackDisplay" destination="ov4-W7-Bly" id="2Sr-Sk-Nzw"/>
+                        <outlet property="numberOfVideos" destination="IY8-Ku-Vkc" id="EmD-rZ-nBP"/>
                         <outlet property="securityDisplay" destination="RWz-QD-CRh" id="huN-aQ-3Ye"/>
                         <outlet property="sliderCnt" destination="7CH-8S-iXz" id="gbR-gP-uxy"/>
                         <outlet property="touchID" destination="ZXP-96-BBJ" id="xCP-Ht-9da"/>
@@ -278,7 +304,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GlF-OQ-YWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="1137.9999999999998"/>
+            <point key="canvasLocation" x="1689" y="1137"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="oJZ-ac-E4p">
@@ -470,6 +496,10 @@
                                 <exclude reference="oAP-V9-kAN"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8Tp-XI-hHL"/>
+                                <exclude reference="Nq2-Bf-ZfZ"/>
+                                <exclude reference="gOZ-gt-G8q"/>
+                                <exclude reference="tEX-c9-oEA"/>
                                 <include reference="1Wk-LR-oG8"/>
                                 <include reference="9Mm-59-hDg"/>
                                 <exclude reference="eHX-FW-dQ6"/>
@@ -482,10 +512,6 @@
                                 <exclude reference="xiL-Kf-GLf"/>
                                 <exclude reference="bwJ-1u-VRJ"/>
                                 <exclude reference="j9x-cq-O3F"/>
-                                <exclude reference="8Tp-XI-hHL"/>
-                                <exclude reference="Nq2-Bf-ZfZ"/>
-                                <exclude reference="gOZ-gt-G8q"/>
-                                <exclude reference="tEX-c9-oEA"/>
                                 <include reference="lFb-SG-iKQ"/>
                                 <exclude reference="bWL-Dy-Y4c"/>
                             </mask>
@@ -501,6 +527,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="FnP-Gg-VdU"/>
                         <barButtonItem systemItem="action" id="JEL-0p-k1T">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="socialMedia:" destination="WvX-vf-zdG" id="UYe-bQ-SLH"/>
+                            </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="gmi-bC-bx0"/>
