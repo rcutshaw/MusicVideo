@@ -46,7 +46,7 @@ class APIManager {
                         for (index, entry) in entries.enumerate() {
                             let entry = Videos(data: entry as! JSONDictionary)
                             entry.vRank = index + 1
-                            print("entry price = \(entry.vPrice)")
+                            //print("entry price = \(entry.vPrice)")
                             videos.append(entry)
                         }
                         

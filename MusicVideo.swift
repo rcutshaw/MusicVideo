@@ -110,7 +110,13 @@ class Videos {
         if let img = data["im:image"] as? JSONArray,
             image = img[2] as? JSONDictionary,
             vImageUrl = image["label"] as? String {
+            
+            if NSUserDefaults.standardUserDefaults().boolForKey("BestImageQualSetting") == true && reachabilityStatus == WIFI {
                 _vImageUrl = vImageUrl.stringByReplacingOccurrencesOfString("100x100", withString: "600x600")
+            } else {
+                _vImageUrl = vImageUrl.stringByReplacingOccurrencesOfString("100x100", withString: "300x300")
+            }
+            
         } else {
             // You may not always get data back from the JSON - you may want to display message
             // Element in the JSON is unexpected
