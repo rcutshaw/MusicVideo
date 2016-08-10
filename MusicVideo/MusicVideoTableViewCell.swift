@@ -10,7 +10,7 @@ import UIKit
 
 class MusicVideoTableViewCell: UITableViewCell {
 
-    var video: Videos? {
+    var video: Video? {
         didSet {
             updateCell()
         }
@@ -41,7 +41,7 @@ class MusicVideoTableViewCell: UITableViewCell {
         
     }
     
-    func GetVideoImage(video: Videos, imageView : UIImageView){
+    func GetVideoImage(video: Video, imageView : UIImageView){
         
         // Background thread
         //  DISPATCH_QUEUE_PRIORITY_HIGH Items dispatched to the queue will run at high priority, i.e. the queue will be scheduled for execution before any default priority or low priority queue.
