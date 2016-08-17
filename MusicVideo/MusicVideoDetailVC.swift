@@ -13,11 +13,11 @@ import LocalAuthentication
 
 class MusicVideoDetailVC: UIViewController {
 
-    var videos:Video!
+    var video:Video!
     var securitySwitch:Bool = false
     
     @IBOutlet weak var vName: UILabel!
-    @IBOutlet weak var vVideoImage: UIImageView!
+    @IBOutlet weak var vVideoImage: CustomImageView!
     @IBOutlet weak var vGenre: UILabel!
     @IBOutlet weak var vPrice: UILabel!
     @IBOutlet weak var vRights: UILabel!
@@ -27,14 +27,14 @@ class MusicVideoDetailVC: UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(preferredFontChanged), name: UIContentSizeCategoryDidChangeNotification, object: nil)
         
-        title = videos.vArtist
-        vName.text = videos.vName
-        vPrice.text = videos.vPrice
-        vRights.text = videos.vRights
-        vGenre.text = videos.vGenre
+        title = video.vArtist
+        vName.text = video.vName
+        vPrice.text = video.vPrice
+        vRights.text = video.vRights
+        vGenre.text = video.vGenre
         
-        if videos.vImageData != nil {
-            vVideoImage.image = UIImage(data: videos.vImageData!)
+        if video.vImageData != nil {
+            vVideoImage.image = UIImage(data: video.vImageData!)
         } else {
             vVideoImage.image = UIImage(named: "imageNotAvailable")
         }
@@ -154,9 +154,9 @@ class MusicVideoDetailVC: UIViewController {
     func shareMedia() {
         
         let activity1 = "Have you had the opportunity to see this Music Video?"
-        let activity2 = ("\(videos.vName) by \(videos.vArtist)")
+        let activity2 = ("\(video.vName) by \(video.vArtist)")
         let activity3 = "Watch it and tell me what you think?"
-        let activity4 = videos.vLinkToiTunes
+        let activity4 = video.vLinkToiTunes
         let activity5 = "(Shared with the Music Video App - Step It UP!)"
         
         let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [activity1, activity2, activity3, activity4,activity5], applicationActivities: nil)
@@ -195,7 +195,7 @@ class MusicVideoDetailVC: UIViewController {
     
     @IBAction func playVideo(sender: UIBarButtonItem) {
         
-        let url = NSURL(string: videos.vVideoUrl)!
+        let url = NSURL(string: video.vVideoUrl)!
         let player = AVPlayer(URL: url)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player

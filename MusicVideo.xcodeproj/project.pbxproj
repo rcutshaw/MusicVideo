@@ -22,6 +22,7 @@
 		179F53EB1D4CE62D0034670E /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F53EA1D4CE62D0034670E /* MusicVideo.swift */; };
 		179F53F01D4D297E0034670E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 179F53EF1D4D297E0034670E /* Reachability.m */; };
 		179F543C1D4E6F970034670E /* MusicVideoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F543B1D4E6F970034670E /* MusicVideoTVC.swift */; };
+		17DADF041D63A20E0053AA54 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DADF031D63A20E0053AA54 /* CustomImageView.swift */; };
 		17FEA8831D5B75F200BA5AAE /* JsonDataExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FEA8821D5B75F200BA5AAE /* JsonDataExtractor.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		179F53EE1D4D297E0034670E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		179F53EF1D4D297E0034670E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		179F543B1D4E6F970034670E /* MusicVideoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTVC.swift; sourceTree = "<group>"; };
+		17DADF031D63A20E0053AA54 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		17FEA8821D5B75F200BA5AAE /* JsonDataExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDataExtractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,7 +152,6 @@
 			children = (
 				1784B7F41D529FE700407412 /* AboutVC.swift */,
 				179F543B1D4E6F970034670E /* MusicVideoTVC.swift */,
-				172967A91D4E8B2F00DB86F5 /* MusicVideoTableViewCell.swift */,
 				172967AD1D4FDEC700DB86F5 /* MusicVideoDetailVC.swift */,
 				1784B7F01D51424500407412 /* SettingsTVC.swift */,
 			);
@@ -160,6 +161,8 @@
 		179F53E21D4C10460034670E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				172967A91D4E8B2F00DB86F5 /* MusicVideoTableViewCell.swift */,
+				17DADF031D63A20E0053AA54 /* CustomImageView.swift */,
 				179F53B71D4C0FF90034670E /* Main.storyboard */,
 				179F53BC1D4C0FF90034670E /* LaunchScreen.storyboard */,
 			);
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				179F53E61D4C22A30034670E /* APIManager.swift in Sources */,
+				17DADF041D63A20E0053AA54 /* CustomImageView.swift in Sources */,
 				172967AE1D4FDEC700DB86F5 /* MusicVideoDetailVC.swift in Sources */,
 				179F53EB1D4CE62D0034670E /* MusicVideo.swift in Sources */,
 				172967AA1D4E8B2F00DB86F5 /* MusicVideoTableViewCell.swift in Sources */,

@@ -11,6 +11,7 @@ import UIKit
 class MusicVideoTVC: UITableViewController/*, UISearchResultsUpdating*/ {
 
     var videos = [Video]()  // created this array to hold all our fetched videos
+    
     var filterSearch = [Video]()
     let resultSearchController = UISearchController(searchResultsController: nil)
     
@@ -49,6 +50,11 @@ class MusicVideoTVC: UITableViewController/*, UISearchResultsUpdating*/ {
         
     }
     
+/*
+    override func viewDidDisappear(animated: Bool) {
+        self.imageLoadingOperationQueue.cancelAllOperations()
+    }
+*/
     func preferredFontChanged() {
         
         print("The preferred Font has changed")
@@ -59,11 +65,7 @@ class MusicVideoTVC: UITableViewController/*, UISearchResultsUpdating*/ {
         print(reachabilityStatus)
         
         self.videos = videos  // stored in class instance
-        
-        for (index, item) in videos.enumerate() {
-            print("\(index) title = \(item.vName) - artist = \(item.vArtist)")
-        }
-        
+                
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.redColor()]
         
         title = ("The iTunes Top \(limit) Music Videos")
@@ -180,6 +182,16 @@ class MusicVideoTVC: UITableViewController/*, UISearchResultsUpdating*/ {
         
     }
     
+    func isRowZeroVisible() -> Bool {
+        let indexes = tableView.indexPathsForVisibleRows!
+        for index: NSIndexPath in indexes {
+            if index.row == 0 {
+                return true
+            }
+        }
+        return false
+    }
+    
     // Is called just as the object is about to be deallocated
     deinit
     {
@@ -217,10 +229,13 @@ class MusicVideoTVC: UITableViewController/*, UISearchResultsUpdating*/ {
             cell.video = videos[indexPath.row]
         }
         
+        if isRowZeroVisible() == false {
+            cell.video = nil
+        }
+        
         return cell
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -264,6 +279,8 @@ class MusicVideoTVC: UITableViewController/*, UISearchResultsUpdating*/ {
         if segue.identifier == storyboard.segueIdentifier {
             
             if let indexPath = tableView.indexPathForSelectedRow {
+                //let theCell = tableView.cellForRowAtIndexPath(indexPath) as? MusicVideoTableViewCell
+                
                 let video: Video
                 if resultSearchController.active {
                     video = filterSearch[indexPath.row]
@@ -271,7 +288,7 @@ class MusicVideoTVC: UITableViewController/*, UISearchResultsUpdating*/ {
                     video = videos[indexPath.row]
                 }
                 let dvc = segue.destinationViewController as! MusicVideoDetailVC
-                dvc.videos = video
+                dvc.video = video
             }
         }
     }
